@@ -52,6 +52,7 @@ def send():
                         open(rpath+'/balance.txt', 'w').write(str(rb))
                         open(spath+'/balance.txt', 'w').write(str(sb))
                         print('Funds sent.\n')
+                        t = input('<MENU/send>')
                         if t == 'menu':
                             menu()
                         else:
@@ -97,8 +98,11 @@ def balance():
         menu()
     else:
         print('cant find user [' + t + '].')
-        input()
-        balance()
+        t = input('<BALANCE/menu>')
+        if t == 'menu':
+            menu()
+        else:
+            balance()
         
 def userlist():
     clear()
